@@ -13,14 +13,14 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=ABeeZee|Open+Sans|Righteous" rel="stylesheet">
 
-      <link rel="stylesheet" href="css/paginaPrincipalStyle.css">
-      <link rel="stylesheet" href="css/paginaPrincipalStyleMobile.css">
+      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyle.css'); }}">
+      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyleMobile.css'); }}">
     </head>
 
     <body>
 
       <div class="container">
-        <div class="logo"><img src="imagenes/logo2.png"></div>
+        <div class="logo"><img src="{{ URL::asset('imagenes/logo2.png') }}"></div>
       </div>
         <nav class="sticky-top">
           <div>
@@ -32,7 +32,7 @@
     <main>
       <section>
       <div class="banner">
-        <img src="imagenes/banner.jpg">
+        <img src="{{ URL::asset('imagenes/banner.jpg') }}">
           <div class="container">
             <div class="titulo text-center"><h1>Canchas Ya!</h1></div>
             <div class="reservar"><h2> ¡Reservá ahora!</h2>
@@ -46,7 +46,7 @@
 
         <div class="tipos-de-canchas">
           <div class="card">
-            <img class="card-img-top" src="imagenes/hockey.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{ URL::asset('imagenes/hockey.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Hockey</b></h5>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="card">
-            <img class="card-img-top" src="imagenes/futbol.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{ URL::asset('imagenes/futbol.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Fútbol</b></h5>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="card">
-            <img class="card-img-top" src="imagenes/tenis.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{ URL::asset('imagenes/tenis.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Tenis</b></h5>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
