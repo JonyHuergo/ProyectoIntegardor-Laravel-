@@ -15,6 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('test', function () {
+//Route::resource('canchasYa', 'UsersController');
+
+Route::get('bienvenido', function () {
+    return view('bienvenido');
+});
+
+Route::get('ingresar', function () {
+    return view('ingresar');
+});
+
+Route::get('paginaPrincipal', function () {
+    return view('paginaPrincipal');
+});
+
+Route::get('preguntas', function () {
+    return view('preguntas');
+});
+
+Route::get('registro', function () {
     return view('registro');
-});*/
+});

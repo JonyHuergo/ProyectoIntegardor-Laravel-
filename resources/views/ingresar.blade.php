@@ -54,7 +54,7 @@
               <nav class="sticky-top">
                   <div>
                     <ul class="menu text-center">
-                      <li><a href="paginaPrincipal.php">Principal</a></li><li><a href="preguntas.php">Preguntas </a></li><li><a href="registro.php">Registrarse</a></li><li class="active"><a href="ingresar.php">Ingresar</a></li>
+                      <li><a href="paginaPrincipal">Principal</a></li><li><a href="preguntas">Preguntas </a></li><li><a href="registro">Registrarse</a></li><li class="active"><a href="ingresar">Ingresar</a></li>
                     </ul>
                 </div>
               </nav>

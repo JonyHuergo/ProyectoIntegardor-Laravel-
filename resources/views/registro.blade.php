@@ -107,7 +107,7 @@ if ($_POST) {
 
   <nav class="sticky-top">
     <ul class="menu text-center">
-      <li><a href="paginaPrincipal.php">Principal</a></li><li><a href="preguntas.php">Preguntas</a></li><li class="active"><a href="registro.php">Registrarse</a></li><li><a href="ingresar.php">Ingresar</a></li>
+      <li><a href="paginaPrincipal">Principal</a></li><li><a href="preguntas">Preguntas</a></li><li class="active"><a href="registro">Registrarse</a></li><li><a href="ingresar">Ingresar</a></li>
     </ul>
   </nav>
 
