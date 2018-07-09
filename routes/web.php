@@ -36,3 +36,6 @@ Route::get('preguntas', function () {
 Route::get('registro', function () {
     return view('registro');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
