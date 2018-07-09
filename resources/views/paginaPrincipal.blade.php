@@ -13,8 +13,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=ABeeZee|Open+Sans|Righteous" rel="stylesheet">
 
-      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyle.css'); }}">
-      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyleMobile.css'); }}">
+      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyle.css') }}">
+      <link rel="stylesheet" href="{{ URL::asset('css/paginaPrincipalStyleMobile.css') }}">
     </head>
 
     <body>

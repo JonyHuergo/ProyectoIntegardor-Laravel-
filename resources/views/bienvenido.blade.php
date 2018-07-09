@@ -1,8 +1,8 @@
-<?php
+<?php/*
 session_start();
 if(!isset($_SESSION["registrado"])){
   header("Location: ingresar.php");
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ if(!isset($_SESSION["registrado"])){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=ABeeZee|Open+Sans|Righteous" rel="stylesheet">
         
-        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bienvenidoStyle.css'); }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bienvenidoStyle.css') }}">
     </head>
     <body>
         <div class="contenedor">
@@ -33,7 +33,7 @@ if(!isset($_SESSION["registrado"])){
               </nav>
             <main>
                 <h1>Bienvenido</h1>
-                <span><h3>¡Gracias por haberte logeado <?=$_SESSION["usuario"]?>!</h3></span>
+                <span><h3>¡Gracias por haberte logeado <?='Usuario'/*$_SESSION["usuario"]*/?>!</h3></span>
             </main>
             <footer class="footer-general">
               <div>

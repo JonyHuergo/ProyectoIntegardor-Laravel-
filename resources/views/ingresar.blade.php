@@ -1,4 +1,4 @@
-<?php
+<?php/*
 
     session_start();
     if(isset($_SESSION["registrado"])){
@@ -31,7 +31,7 @@
                 setcookie("password", $_POST["contraseña"], time()-3600*24*7);
             }
       }
-    }
+    }*/
 ?>
 <!DOCTYPE html>
   <html>
@@ -44,7 +44,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=ABeeZee|Open+Sans|Righteous" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css'); }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css') }}">
     </head>
     <body>
         <div class="contenedor">

@@ -1,4 +1,4 @@
-<?php
+<!--<?php/*
 
  session_start();
  if(isset($_SESSION["registrado"])){
@@ -77,8 +77,8 @@ if ($_POST) {
     }
 
   }
-}
-?>
+}*/
+?>-->
 
 <!DOCTYPE html>
 
@@ -96,7 +96,7 @@ if ($_POST) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=ABeeZee|Open+Sans|Righteous" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ URL::asset('css/registroStyle.css'); }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/registroStyle.css') }}">
 </head>
 
 <body>
@@ -118,19 +118,19 @@ if ($_POST) {
       <div class="area">
 
         <form role="form" action="registro.php" method="post" enctype="multipart/form-data">
-
-          <?php if (Validador::huboErrores($errores)) : ?>
+<!--
+          <?php// if (Validador::huboErrores($errores)) : ?>
             <div id="errores" class="alert alert-danger">
               <ul>
-                <?php foreach($errores as $bolsaDeErrores) : ?>
-                  <?php foreach($bolsaDeErrores as $error) : ?>
-                    <li><?= $error ?></li>
-                  <?php endforeach; ?>
-                <?php endforeach; ?>
+                <?php// foreach($errores as $bolsaDeErrores) : ?>
+                  <?php// foreach($bolsaDeErrores as $error) : ?>
+                    <li><?='' //$error ?></li>
+                  <?php// endforeach; ?>
+                <?php// endforeach; ?>
               </ul>
             </div>
-          <?php endif; ?>
-
+          <?php// endif; ?>
+          -->
           <div>
             <label for="nombre">Nombre</label>
             <br/>
