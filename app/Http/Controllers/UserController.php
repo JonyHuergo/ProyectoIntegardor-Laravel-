@@ -34,7 +34,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'max:45',
+            'apellido' => 'max:45',
+            'username' => 'required|min:4|max:45',
+            'email' => 'required|email|max:80',
+            'password' => 'required'
+            ]);
+        $info = $request->all();
     }
 
     /**
