@@ -24,7 +24,7 @@ $migrarJSON=false;
 if($SQL){
   Db::inicializar($dns,$db_user,$db_pass);
   $SQLdb = new SQLdb($dns,$db_user,$db_pass);
-  
+
   if($migrarJSON){
    migrar($dns,$db_user,$db_pass);
   }
@@ -160,9 +160,9 @@ if ($_POST) {
           </div>
 
           <div>
-            <label for="email-confirm">Confirmar Email</label>
+            <label for="email_confirmation">Confirmar Email</label>
             <br/>
-            <input type="text" class="form-control" id="email-confirm" name="email_confirm" value="" placeholder="Ingrese Confirmación Email">
+            <input type="text" class="form-control" id="email_confirmation" name="email_confirmation" value="" placeholder="Ingrese Email">
             <br/>
           </div>
 
@@ -174,9 +174,9 @@ if ($_POST) {
           </div>
 
           <div>
-            <label for="password-confirm">Confirmar Contraseña</label>
+            <label for="password_confirmation">Confirmar Contraseña</label>
             <br/>
-            <input type="password" class="form-control" id="password-confirm" name="password_confirm" placeholder="Ingrese Confirmación Contraseña">
+            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Ingrese Contraseña">
             <br/>
           </div>
 
