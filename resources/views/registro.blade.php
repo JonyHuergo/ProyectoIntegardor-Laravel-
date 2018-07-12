@@ -10,19 +10,6 @@
       <div class="area">
 
         <form role="form" action="registro.php" method="post" enctype="multipart/form-data">
-<!--
-          <?php// if (Validador::huboErrores($errores)) : ?>
-            <div id="errores" class="alert alert-danger">
-              <ul>
-                <?php// foreach($errores as $bolsaDeErrores) : ?>
-                  <?php// foreach($bolsaDeErrores as $error) : ?>
-                    <li><?='' //$error ?></li>
-                  <?php// endforeach; ?>
-                <?php// endforeach; ?>
-              </ul>
-            </div>
-          <?php// endif; ?>
-          -->
           <div>
             <label for="nombre">Nombre</label>
             <br/>
