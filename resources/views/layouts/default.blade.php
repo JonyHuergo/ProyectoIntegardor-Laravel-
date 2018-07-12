@@ -7,14 +7,14 @@
 
     <body>
      <header>
-      @include('includes.header')
+        @include('includes.header')
      </header>
-    <main>
+     <main>
         @yield('content')
-        </main>
-      <footer class="footer-general">
+     </main>
+     <footer class="footer-general">
         @include('includes.footer')
-      </footer>
+     </footer>
     </body>
 
   </html>
