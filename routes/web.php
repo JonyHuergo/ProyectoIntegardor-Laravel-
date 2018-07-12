@@ -33,9 +33,7 @@ Route::get('preguntas', function () {
     return view('preguntas');
 });
 
-Route::get('registro', function () {
-    return view('registro');
-});
+Route::get('registro', 'UserController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
