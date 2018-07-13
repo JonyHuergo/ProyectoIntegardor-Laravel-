@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -35,13 +36,29 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre' => 'max:45',
-            'apellido' => 'max:45',
+            'nombre' => 'max:45|nullable',
+            'apellido' => 'max:45|nullable',
             'username' => 'required|min:4|max:45',
             'email' => 'required|email|max:80',
-            'password' => 'required'
+            'password' => 'required',
+            'avatar' => 'nullable'
             ]);
+
         $info = $request->all();
+
+        if(!isset($info['avatar'])){
+            $info['avatar'] = null;
+        }
+
+        $usuario = User::create([
+            'first_name' => $info['nombre'],
+            'last_name' => $info['apellido'],
+            'email' => $info['email'],
+            'password' => $info['password'],
+            'avatar' => $info['avatar'],
+            'username' => $info['username']]);
+
+        return view('registro');
     }
 
     /**

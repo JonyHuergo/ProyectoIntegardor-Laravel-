@@ -9,7 +9,18 @@
 
       <div class="area">
 
-        <form role="form" action="registro.php" method="post" enctype="multipart/form-data">
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
+      
+
+        <form role="form" action="registro" method="post" enctype="multipart/form-data">
           <div>
             <label for="nombre">Nombre</label>
             <br/>
@@ -72,6 +83,7 @@
             <input type="date" name="fechaNacimiento">
             <br/>
           </div>
+          {{ csrf_field() }}
 
           <input class="boton pull-right" type="submit" name="botonSubmit" value="Registrarme"/>
         </form>

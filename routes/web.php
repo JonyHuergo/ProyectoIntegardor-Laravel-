@@ -34,6 +34,8 @@ Route::get('preguntas', function () {
 });
 
 Route::get('registro', 'UserController@create');
+Route::post('registro', 'UserController@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
