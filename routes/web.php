@@ -36,6 +36,10 @@ Route::get('preguntas', function () {
 Route::get('registro', 'UserController@create');
 Route::post('registro', 'UserController@store');
 
+Route::get('canchas', 'FieldController@index');
+Route::get('registrarCancha', 'FieldController@create');
+Route::post('registrarCancha', 'FieldController@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

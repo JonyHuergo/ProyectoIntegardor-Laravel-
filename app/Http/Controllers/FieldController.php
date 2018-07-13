@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Field;
 
 class FieldController extends Controller
 {
@@ -13,7 +14,8 @@ class FieldController extends Controller
      */
     public function index()
     {
-        //
+        $canchas = Field::paginate(10);
+        return view('canchas', ['canchas' => $canchas]);
     }
 
     /**
@@ -23,7 +25,7 @@ class FieldController extends Controller
      */
     public function create()
     {
-        //
+        return view('registrarCancha');
     }
 
     /**
@@ -34,7 +36,23 @@ class FieldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'max:80|required',
+            'address' => 'max:100|required',
+            'sport' => 'required|max:15',
+            'hourly_price' => 'required|numeric'
+            ]);
+
+        $info = $request->all();
+
+        $usuario = Field::create([
+            'name' => $info['name'],
+            'address' => $info['address'],
+            'sport' => $info['sport'],
+            'hourly_price' => $info['hourly_price']
+            ]);
+
+        return view('registrarCancha');
     }
 
     /**

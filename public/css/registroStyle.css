@@ -185,6 +185,10 @@ div .dma{
   background-color: white;
 }
 
+.btn-primary a{
+  color: white;
+}
+
 @media (max-width: 768px){
   nav .menu{
       float:none;

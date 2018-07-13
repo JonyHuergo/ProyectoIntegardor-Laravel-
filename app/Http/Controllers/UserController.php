@@ -38,8 +38,8 @@ class UserController extends Controller
         $this->validate($request, [
             'nombre' => 'max:45|nullable',
             'apellido' => 'max:45|nullable',
-            'username' => 'required|min:4|max:45',
-            'email' => 'required|email|max:80',
+            'username' => 'required|min:4|max:45|unique:users',
+            'email' => 'required|email|max:80|unique:users',
             'password' => 'required',
             'avatar' => 'nullable'
             ]);
