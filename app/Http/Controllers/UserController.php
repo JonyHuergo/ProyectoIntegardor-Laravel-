@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -27,6 +28,23 @@ class UserController extends Controller
         return view('registro');
     }
 
+    public function login()
+    {
+        return view('ingresar');
+    }
+
+    public function validateUser(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required|min:4|max:45|',
+            'password' => 'required'
+            ]);
+        if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
+            return view('bienvenido');
+        }
+        return view('ingresar');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,6 +63,7 @@ class UserController extends Controller
             ]);
 
         $info = $request->all();
+        $info['password'] = password_hash($info['password'], PASSWORD_BCRYPT);
 
         if(!isset($info['avatar'])){
             $info['avatar'] = null;

@@ -1,6 +1,7 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
+@extends('layouts.default')
 
-@section('content')
+{{--@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -66,4 +67,40 @@
         </div>
     </div>
 </div>
+@endsection--}}
+
+@php
+    session_start();
+    if(isset($_SESSION["registrado"])){
+    header("Location: paginaPrincipal");
+    }
+@endphp
+@section('title', 'Ingresar')
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css') }}">
 @endsection
+@section('content')
+<section>
+                    <div class="text-center">
+                        <h1>Ingresa</h1>
+                        <form class="row" action="{{ route('login') }}" aria-label="{{ __('Login') }}" method="post">
+                            {{ csrf_field() }}
+                            <input type='hidden' name='submitted' id='submitted' value='1' />
+                            <span>
+                            <label class="col-xl-6">Email</label>
+                            <input class="col-xl-6 form-control" type="text" name="username" id='username' value="<?php if(isset($_COOKIE["usuario"])){ echo $_COOKIE["usuario"];} else if($_POST){ if(!$errores["usuario"]){ echo $_POST["usuario"];}}?>">
+                            </span>
+                            <span>
+                            <label for="password" class="col-xl-6">Contraseña</label>
+                            <input class="col-xl-6 form-control" type="password" name="password" id='password' value="<?php if(isset($_COOKIE["password"])){ echo $_COOKIE["password"];}?>" id='password' maxlength="50">
+                            </span>
+                            <section class="col-xl-6">
+                                <label for="recordarme">Recordarme</label>
+                                <input class="recordarme" type="checkbox" name="recordarme" value="1">
+                            </section>
+                            <input class="boton" type="submit" value="Ingresar">
+                          </form>
+                          <a href="#">Olvidé mi contraseña</a>
+                    </div>
+                </section>
+@stop

@@ -35,6 +35,8 @@ Route::get('preguntas', function () {
 
 Route::get('registro', 'UserController@create');
 Route::post('registro', 'UserController@store');
+Route::get('ingresar', 'UserController@login');
+Route::post('ingresar', 'UserController@validateUser');
 
 Route::get('canchas', 'FieldController@index');
 Route::get('registrarCancha', 'FieldController@create');
