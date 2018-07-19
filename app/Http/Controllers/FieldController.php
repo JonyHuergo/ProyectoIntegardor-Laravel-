@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Field;
 
+
 class FieldController extends Controller
 {
     /**
@@ -52,7 +53,8 @@ class FieldController extends Controller
             'hourly_price' => $info['hourly_price']
             ]);
 
-        return view('registrarCancha');
+        
+        return redirect()->action('FieldController@index');
     }
 
     /**
@@ -63,7 +65,8 @@ class FieldController extends Controller
      */
     public function show($id)
     {
-        //
+        $cancha = Field::find($id);
+        return view('showCancha', ['cancha' => $cancha]);
     }
 
     /**

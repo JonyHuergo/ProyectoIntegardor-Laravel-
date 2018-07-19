@@ -39,6 +39,7 @@ Route::get('ingresar', 'UserController@login');
 Route::post('ingresar', 'UserController@validateUser');
 
 Route::get('canchas', 'FieldController@index');
+Route::get('canchas/{id}', 'FieldController@show');
 Route::get('registrarCancha', 'FieldController@create');
 Route::post('registrarCancha', 'FieldController@store');
 

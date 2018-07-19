@@ -10,21 +10,29 @@
 
       <div class="area">
 
-            <button class="btn pull-right btn-primary"><a href="registrarCancha">Registrar Cancha</a></button>
+        <h1 class="text-center">Canchas</h1>
 
+        
+        @if($canchas[0]===null)
+            <p>No se encontraron canchas registradas</p>
+        @else
             @foreach ($canchas as $cancha)
+            <a href="canchas/{{$cancha->id}}">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><b>{{ $cancha->name }}</b></h5>
                     <p class="card-text">Direccion: {{ $cancha->address }}</p>
                     <p class="card-text">Deporte: {{ $cancha->sport }}</p>
-                    <p class="card-text">Precio por hora: {{ $cancha->hourly_price }}</p>
-                </div>            
+                    <p class="card-text">Precio por hora: ${{ $cancha->hourly_price }}</p>
+                </div>   
+            </div>
+            </a>         
             @endforeach
-            
-            {{ $canchas->links() }}
+        @endif
+        <a href="registrarCancha"><button class="boton">Registrar Cancha</button></a>
+        {{ $canchas->links() }}
 
-      </div>
+      
 
 
     </div>

@@ -1,3 +1,29 @@
+  h1{
+    font-family: 'Righteous', cursive, sans-serif;
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: white;
+  }
+
+  .card{
+    margin-top: 10px;
+    border-width: 0.5px;
+    border-color: black;
+  }
+
+  .card:hover{
+    border-color: white;
+    background-color: #6c4799;
+  }
 
   main #banner{
     position: relative;
@@ -8,41 +34,6 @@
     padding: 20px;
   }
   
-  main #banner p{
-    font-size: 12px;
-    text-align: justify;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  
-  }
-  
-  main .texto {
-    position: absolute;
-    top: 160px;
-  }
-  
-  #errores{
-    width: 100%;
-  }
-  
-  form{
-    overflow: hidden;
-  }
-  
-  form div{
-    width: 50%;
-    margin: 10px 30px;
-    }
-  
-  form div:first-child{
-    padding-top: 30px;
-  }
-  
-  .form{
-    margin-bottom: 30px;
-  }
-  
   .boton{
     background-color: #4b9c35;
     width: 140px;
@@ -51,10 +42,16 @@
     font-size: 16px;
     padding-top: 15px;
     padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: 0;
-    margin: 30px;
     text-align: center;
   }
+
+  .boton a{
+      color: white;
+  }
+
   
   .boton:hover{
     background-color: #6c4799;
@@ -65,34 +62,6 @@
     width: 80%;
     margin: 30px 10%;
     padding: 50px;
-  }
-  
-  input {
-    width: 50%;
-    border-radius: 4px;
-    height: 24px;
-  }
-  
-  .campo{
-    width: 50%;
-  }
-  
-  div .dma{
-    clear: both;
-    display: inline-block;
-    margin-bottom: 20px;
-    }
-  
-  
-  .cancha img {
-    padding-top: 20px;
-    width: 100%;
-    height: auto;
-  }
-  
-  .cancha p {
-    padding-top: 30px;
-    padding-bottom: 30px;
   }
   
   .btn-primary a{
@@ -106,12 +75,6 @@
       margin: 30px 5%;
     }
   
-    form div{
-      width: 80%;
-      margin: 10px 10%;
-      text-align: center;
-      }
-  
   }
   
   @media (max-width: 480px){
@@ -124,12 +87,7 @@
       width: 100%;
       margin: 30px 0;
     }
-  
-    form div{
-      width: 100%;
-      margin: 10px 0;
-      }
-  
+
     .boton{
       float:none;
       width: 90%;

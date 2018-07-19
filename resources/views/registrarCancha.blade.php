@@ -40,9 +40,9 @@
             <label for="sport">Deporte</label>
             <br/>
             <select id="sport" name="sport">
-                <option value="futbol">Fútbol</option>
-                <option value="tenis">Tenis</option>
-                <option value="hockey">Hockey</option>
+                <option value="Futbol">Fútbol</option>
+                <option value="Tenis">Tenis</option>
+                <option value="Hockey">Hockey</option>
               </select>
             <br/>
           </div>
