@@ -77,6 +77,7 @@
 @endphp
 @section('title', 'Ingresar')
 @section('style')
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css') }}">
 @endsection
 @section('content')
