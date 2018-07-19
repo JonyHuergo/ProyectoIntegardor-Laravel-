@@ -8,6 +8,7 @@ if(!isset($_SESSION["registrado"])){
 @endphp
 @section('title', 'Bienvenido')
 @section('style')
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bienvenidoStyle.css') }}">
 @endsection
 @section('content')

@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('title', 'Preguntas Frecuentes')
 @section('style')
-<link rel="stylesheet" href="{{ URL::asset('css/preguntasStyle.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/preguntasStyle.css') }}">
 @endsection
 @section('content')
 <section>

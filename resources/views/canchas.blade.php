@@ -1,10 +1,11 @@
 @extends('layouts.default')
 @section('title', 'Canchas')
 @section('style')
-<link rel="stylesheet" href="{{ URL::asset('css/registroStyle.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/canchasStyle.css') }}">
 @endsection
 @section('content')
-<div class="banner">
+<div id="banner">
       <br>
 
       <div class="area">
