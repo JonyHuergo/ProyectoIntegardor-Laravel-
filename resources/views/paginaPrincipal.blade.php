@@ -27,7 +27,7 @@
     </div><!-- carousel-item #1-->
 
     <div class="carousel-item">
-      <img class="d-block w-100" src="http://via.placeholder.com/1920x1080?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+      <img class="d-block w-100" src="{{ URL::asset('imagenes/canchas-1.jpg') }}?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
       <div class="container">
         <div class="titulo text-center"><h1>Canchas Ya!</h1></div>
         <div class="reservar"><h2> ¡Reservá ahora!</h2>
@@ -38,7 +38,7 @@
     </div><!-- carousel-item #2-->
 
     <div class="carousel-item">
-      <img class="d-block w-100" src="http://via.placeholder.com/1920x1080?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+      <img class="d-block w-100" src="{{ URL::asset('imagenes/canchas-2.jpg') }}?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
       <div class="container">
         <div class="titulo text-center"><h1>Canchas Ya!</h1></div>
         <div class="reservar"><h2> ¡Reservá ahora!</h2>

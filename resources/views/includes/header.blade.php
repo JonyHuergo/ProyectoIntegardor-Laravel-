@@ -1,6 +1,6 @@
 <!-- Header -->
 <div class="container">
-        <div class="logo"><img src="{{ URL::asset('imagenes/logo2.png') }}"></div>
+        <div class="logo"><a href="/paginaPrincipal"><img src="{{ URL::asset('imagenes/logo2.png') }}"></a></div>
       </div>
         <nav class="sticky-top">
           <div>
