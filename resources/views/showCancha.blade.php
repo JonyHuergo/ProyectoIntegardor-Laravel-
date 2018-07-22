@@ -27,7 +27,7 @@
         <nav class="sticky-top">
             <div>
                 <ul class="menu text-center">
-                    <li><a href="../paginaPrincipal">Principal</a></li>
+                    <li><a href="../">Principal</a></li>
                     <li class="active"><a href="../canchas">Canchas</a></li>
                     <li><a href="../preguntas">Preguntas</a></li>
                     <li><a href="../registro">Registrarse</a></li>

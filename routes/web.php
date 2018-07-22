@@ -1,24 +1,12 @@
 <?php
 
-Route::get('/', function () {
-    return view('paginaPrincipal');
-});
+Route::get('/', 'SiteController@index');
 
 Route::get('bienvenido', function () {
     return view('bienvenido');
 });
 
-Route::get('ingresar', function () {
-    return view('ingresar');
-});
-
-Route::get('paginaPrincipal', function () {
-    return view('paginaPrincipal');
-});
-
-Route::get('preguntas', function () {
-    return view('preguntas');
-});
+Route::get('preguntas', 'SiteController@FAQ');
 
 Route::get('registro', 'UserController@create');
 Route::post('registro', 'UserController@store');
