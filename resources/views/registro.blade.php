@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('title', 'Registrarse')
 @section('style')
-<link rel="stylesheet" href="{{ URL::asset('css/registroStyle.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/registroStyle.css') }}">
 @endsection
 @section('content')
 <div class="banner">

@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('title', 'Registrar Cancha')
 @section('style')
-<link rel="stylesheet" href="{{ URL::asset('css/registroStyle.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/registroStyle.css') }}">
 @endsection
 @section('content')
 <div class="banner">
@@ -39,9 +40,9 @@
             <label for="sport">Deporte</label>
             <br/>
             <select id="sport" name="sport">
-                <option value="futbol">Fútbol</option>
-                <option value="tenis">Tenis</option>
-                <option value="hockey">Hockey</option>
+                <option value="Futbol">Fútbol</option>
+                <option value="Tenis">Tenis</option>
+                <option value="Hockey">Hockey</option>
               </select>
             <br/>
           </div>

@@ -77,30 +77,66 @@
 @endphp
 @section('title', 'Ingresar')
 @section('style')
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css') }}">
 @endsection
 @section('content')
 <section>
-                    <div class="text-center">
-                        <h1>Ingresa</h1>
-                        <form class="row" action="{{ route('login') }}" aria-label="{{ __('Login') }}" method="post">
-                            {{ csrf_field() }}
-                            <input type='hidden' name='submitted' id='submitted' value='1' />
-                            <span>
-                            <label class="col-xl-6">Email</label>
-                            <input class="col-xl-6 form-control" type="text" name="username" id='username' value="<?php if(isset($_COOKIE["usuario"])){ echo $_COOKIE["usuario"];} else if($_POST){ if(!$errores["usuario"]){ echo $_POST["usuario"];}}?>">
-                            </span>
-                            <span>
-                            <label for="password" class="col-xl-6">Contraseña</label>
-                            <input class="col-xl-6 form-control" type="password" name="password" id='password' value="<?php if(isset($_COOKIE["password"])){ echo $_COOKIE["password"];}?>" id='password' maxlength="50">
-                            </span>
-                            <section class="col-xl-6">
-                                <label for="recordarme">Recordarme</label>
-                                <input class="recordarme" type="checkbox" name="recordarme" value="1">
-                            </section>
-                            <input class="boton" type="submit" value="Ingresar">
-                          </form>
-                          <a href="#">Olvidé mi contraseña</a>
-                    </div>
-                </section>
+    <div class="text-center">
+        <h1>Ingresa</h1>
+        <form class="row" method="POST" action="{{ route('login') }}">
+
+            {{ csrf_field() }}
+
+            @if(session()->has('login_error'))
+
+                <div class="alert alert-success">
+
+                  {{ session()->get('login_error') }}
+
+                </div>
+                
+            @endif
+             
+            <label for="identity" class="col-xl-6 control-label">Email o Usuario</label>
+
+            <div class="col-xl-6">
+                <input id="identity" type="identity" class="form-control" name="identity" value="{{ old('identity') }}" autofocus>
+
+                  @if ($errors->has('identity'))
+
+                    <span class="help-block">
+                        <strong>{{ $errors->first('identity') }}</strong>
+                    </span>
+
+                  @endif
+
+            </div>
+            <span></span>
+            <label for="password" class="col-xl-6 control-label">Contraseña</label>
+            <div class="col-xl-6">
+                <input id="password" type="password" class="form-control" name="password">
+
+                  @if ($errors->has('password'))
+
+                    <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+
+                  @endif
+
+            </div>
+              
+            <section class="col-xl-6">
+                <label for="remember">Recordarme</label>
+                <input type="checkbox" name="remember" class="recordarme" {{ old('remember') ? 'checked' : '' }}>
+            </section>
+            
+            <input class="boton" type="submit" value="Ingresar">   
+            
+        </form>
+        <a href="{{ route('password.request') }}">{{ __('Olvidé mi contraseña') }}</a>
+    </div>
+</section>
+                
 @stop
