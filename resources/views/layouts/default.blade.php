@@ -6,15 +6,16 @@
     </head>
 
     <body>
-     <header>
-        @include('includes.header')
-     </header>
-     <main>
+      @include('includes.header')
+      <header class="sticky-top">
+        @include('includes.nav')
+      </header>
+      <main>
         @yield('content')
-     </main>
-     <footer class="footer-general">
+      </main>
+      <footer class="footer-general">
         @include('includes.footer')
-     </footer>
+      </footer>
     </body>
 
   </html>
