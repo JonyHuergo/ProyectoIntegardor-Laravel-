@@ -77,13 +77,6 @@
             <input type="file" name="avatar"/>
             <br/>
           </div>
-
-          <div class="form">
-            <label> Fecha de Nacimiento</label>
-            <br/>
-            <input type="date" name="fechaNacimiento">
-            <br/>
-          </div>
           {{ csrf_field() }}
 
           <input class="boton pull-right" type="submit" name="botonSubmit" value="Registrarme"/>
