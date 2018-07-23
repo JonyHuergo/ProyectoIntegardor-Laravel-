@@ -4,13 +4,44 @@ body {
   }
   
   .container{
-    max-width: 1180px;
+    height: 200px;
     margin: 0 auto;
+  }
+
+  .user-card{
+    font-family: 'ABeeZee', sans-serif;
+    height: 150px;
+    margin-top:25px;
+    margin-bottom:25px;
+    border-color:black;
+  }
+
+  .card-group .card{
+    padding: 5px;
+    border-color:black;
+    overflow:hidden;
+  }
+
+  .registro-ingreso{
+    background-color: #4b9c35;
+    color:white;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .registro-ingreso:hover{
+    background-color: #6c4799;
   }
   
   main {
     margin: 0 auto;
     background-color: #ffffff;
+  }
+
+  .logo{
+    height: 150px;
+    margin-top:25px;
+    margin-bottom:25px;
   }
   
   .logo img{
@@ -93,6 +124,23 @@ body {
   
   .footer-icons:hover{
     background-color: white;
+  }
+
+  @media screen and (max-width:992px){
+
+    .user-card{
+      height: 80%;
+      margin-bottom:10%;
+      padding: 0;
+    }
+
+    .card-group .card{
+      border: 0;
+    }
+
+    .registro-ingreso{
+      width: 100%;
+    }
   }
 
   @media screen and (max-width:780px) {

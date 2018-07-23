@@ -18,7 +18,7 @@
         @else
             @foreach ($canchas as $cancha)
             <a href="canchas/{{$cancha->id}}">
-            <div class="card">
+            <div class="card cancha">
                 <div class="card-body">
                     <h5 class="card-title"><b>{{ $cancha->name }}</b></h5>
                     <p class="card-text">Direccion: {{ $cancha->address }}</p>

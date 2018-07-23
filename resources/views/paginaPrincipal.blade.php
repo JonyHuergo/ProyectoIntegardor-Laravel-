@@ -65,7 +65,7 @@
 
       <div class="container">
         <div class="tipos-de-canchas">
-          <div class="card">
+          <div class="card categorias">
             <img class="card-img-top" src="{{ URL::asset('imagenes/hockey.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Hockey</b></h5>
@@ -73,7 +73,7 @@
               <a href="#" class="btn">Ver canchas</a>
             </div>
           </div>
-          <div class="card">
+          <div class="card categorias">
             <img class="card-img-top" src="{{ URL::asset('imagenes/futbol.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Fútbol</b></h5>
@@ -81,7 +81,7 @@
               <a href="#" class="btn">Ver canchas</a>
             </div>
           </div>
-          <div class="card">
+          <div class="card categorias">
             <img class="card-img-top" src="{{ URL::asset('imagenes/tenis.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Tenis</b></h5>

@@ -111,7 +111,7 @@ nav .menu li a:hover{
   padding:0;
 }
 
-.card{
+.categorias{
   margin-top: 30px;
   width: 31%;
   display: inline-block;
@@ -121,16 +121,16 @@ nav .menu li a:hover{
   border-width: 0;
 }
 
-.card-img-top{
+.categorias .card-img-top{
   height: 250px;
 }
 
-.btn{
+.categorias .btn{
   background-color: #4b9c35;
   color: white;
 }
 
-.btn:hover{
+.categorias .btn:hover{
   background-color: white;
   color: black;
 }

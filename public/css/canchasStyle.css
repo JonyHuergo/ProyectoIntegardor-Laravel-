@@ -14,13 +14,13 @@
     color: white;
   }
 
-  .card{
+  .cancha{
     margin-top: 10px;
     border-width: 0.5px;
     border-color: black;
   }
 
-  .card:hover{
+  .cancha:hover{
     border-color: white;
     background-color: #6c4799;
   }
@@ -62,10 +62,6 @@
     width: 80%;
     margin: 30px 10%;
     padding: 50px;
-  }
-  
-  .btn-primary a{
-    color: white;
   }
   
   @media (max-width: 768px){

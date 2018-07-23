@@ -12,7 +12,7 @@
       height: auto;
     }
 
-  .card{
+  .categorias{
       display:block;
       width: 80%;
       margin: 30px 10%;
@@ -90,7 +90,7 @@
     border-top: 5px solid #6c4799;
   }
 
-  .card{
+  .categorias{
       width: 90%;
       margin: 30px 5%;
     }
