@@ -5,6 +5,14 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/preguntasStyle.css') }}">
 @endsection
 @section('content')
+<a href="{{ route('logout') }}"
+  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+  {{ __('Logout') }}
+</a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
 <section>
         <div class="cuerpo row">
 

@@ -20,7 +20,12 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('registro');
+        if(Auth::check()){
+            return redirect('/');
+        } else{
+            return view('registro');
+        }
+        
     }
 
     public function login()

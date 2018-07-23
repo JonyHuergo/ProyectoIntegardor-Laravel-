@@ -5,6 +5,7 @@
     <a href="/"><img src="{{ URL::asset('imagenes/logo2.png') }}"></a>
   </div>
 
+  @if(!Auth::check())
   <div class="card text-center col-md-5 offset-md-3 user-card">
       <div class="card-header">
         Todavia no ingresaste
@@ -20,6 +21,12 @@
         </div>
       </div>
   </div>
- 
+  @else
+  <div class="card text-center col-md-5 offset-md-3 user-card">
+    <div class="card-header">
+      Usuario
+    </div>
+  </div>
+  @endif
 </div>
 <!-- Header END -->

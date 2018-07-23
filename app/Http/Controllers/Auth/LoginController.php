@@ -62,6 +62,7 @@ class LoginController extends Controller
                 'password.required' => 'Ingresa una contraseña',
             ]
         );
+
     }
     /**
      * @param Request $request
