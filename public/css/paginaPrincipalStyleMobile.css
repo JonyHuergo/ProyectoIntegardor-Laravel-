@@ -1,16 +1,4 @@
 @media (max-width: 768px){
-  nav .menu{
-      float:none;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-
-  nav li{
-      display: inline-block;
-      width: 25%;
-      height: auto;
-    }
 
   .categorias{
       display:block;
@@ -29,15 +17,6 @@
 @media (max-width: 480px){
   body{
     background-image: url("../imagenes/banner.jpg");
-  }
-
-  .logo{
-    margin: 10px auto;
-  }
-
-  .logo img{
-    display: block;
-    margin: 0 auto;
   }
 
   section{
@@ -76,20 +55,7 @@
   .sticky-top{
     position: static;
   }
-
-  nav{
-    height: auto;
-  }
-
-  nav ul li{
-    width: 100%;
-    border-bottom: 5px solid #6c4799;
-  }
-
-  nav ul li:first-child{
-    border-top: 5px solid #6c4799;
-  }
-
+  
   .categorias{
       width: 90%;
       margin: 30px 5%;

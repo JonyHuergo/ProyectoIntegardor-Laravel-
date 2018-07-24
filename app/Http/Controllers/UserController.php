@@ -67,7 +67,7 @@ class UserController extends Controller
             $info['password'] = password_hash($info['password'], PASSWORD_BCRYPT);
     
             if(!isset($info['avatar'])){
-                $info['avatar'] = null;
+                $info['avatar'] = "AvatarPlaceholder.png";
             }
     
             $usuario = User::create([

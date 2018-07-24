@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('title', 'Alquiler de Canchas')
 @section('style')
-  {{--<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">--}}
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/paginaPrincipalStyle.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/paginaPrincipalStyleMobile.css') }}">
 @endsection

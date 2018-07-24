@@ -1,5 +1,6 @@
 <!-- Header -->
-<div class="container row">
+
+<div class="contenedor row">
 
   <div class="logo col-md-4" id="logo">
     <a href="/"><img src="{{ URL::asset('imagenes/logo2.png') }}"></a>
@@ -13,11 +14,11 @@
       <div class="card-group">
         <div class="card">
             <p class="card-text">No estoy registrado</p>
-            <a href="registro" class="btn registro-ingreso">Registrarse</a>
+            <a href="{{url('registro')}}" class="btn" id="registro">Registrarse</a>
         </div>
         <div class="card">
             <p class="card-text">Ya tengo una cuenta</p>
-            <a href="login" class="btn registro-ingreso">Ingresar</a>
+            <a href="{{url('login')}}" class="btn" id="ingreso">Ingresar</a>
         </div>
       </div>
   </div>
@@ -38,7 +39,7 @@
         </form>
       </div>
       <div class="card">
-        <img src="{{Auth::user()->avatar}}">
+        <img src="imagenes/avatars/{{Auth::user()->avatar}}">
       </div>
     </div>
     
