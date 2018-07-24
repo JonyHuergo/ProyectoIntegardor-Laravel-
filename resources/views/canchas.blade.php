@@ -15,8 +15,7 @@
           <label for="name">Buscar por nombre</label>
           <input type="text" id="name" name="sport">
 
-          <label for="hourly_price">Precio</label>
-          <input type="number" id="sport" name="sport">
+
 
           <label for="sport">Deporte</label>
           <select id="sport" name="sport">
@@ -25,8 +24,17 @@
             <option value="Hockey">Hockey</option>
           </select>
 
-          <input type="submit">
-        </form>      
+          <br>
+
+          <label>Precio</label>
+          <br>
+          <label for="minimo">Minimo:</label>
+          <input type="number" name="minimo" min="0" step="10">
+          <label for="maximo">Máximo:</label>
+          <input type="number" name="maximo" min="0" step="10">
+
+          <input type="submit" value="Buscar">
+        </form>
       </div>
         <h1 class="text-center">Canchas</h1>
 
