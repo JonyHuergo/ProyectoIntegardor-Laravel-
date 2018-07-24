@@ -137,4 +137,13 @@ class UserController extends Controller
     {
         //
     }
+
+    public function perfil()
+    {
+        if(!Auth::check()){
+            return redirect('/');
+        } else{
+            return view('perfil', ['usuario'=>Auth::user()]);
+        }
+    }
 }

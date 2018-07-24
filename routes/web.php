@@ -12,9 +12,7 @@ Route::get('registro', 'UserController@create');
 Route::post('registro', 'UserController@store');
 Route::get('ingresar', 'UserController@login');
 Route::post('ingresar', 'UserController@validateUser');
-Route::get('perfil', function () {
-    return view('perfil');
-});
+Route::get('perfil', 'UserController@perfil');;
 
 Route::get('canchas', 'FieldController@index');
 Route::get('canchas/{id}', 'FieldController@show');

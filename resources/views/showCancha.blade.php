@@ -4,9 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/canchasStyle.css') }}">
 @endsection
-@section('content')
-<main>
-         
+@section('content')        
     <div id="banner">
         <div class="area">
         @if(isset($cancha))
@@ -19,8 +17,6 @@
         @endif
         </div>
     </div>
-
- </main>
 @endsection
 
 
