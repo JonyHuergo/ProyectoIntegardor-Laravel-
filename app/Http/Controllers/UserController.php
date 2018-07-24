@@ -7,7 +7,8 @@ use App\User;
 use Auth;
 
 class UserController extends Controller
-{
+{ 
+    
     /**
      * Display a listing of the resource.
      *
@@ -39,39 +40,51 @@ class UserController extends Controller
             'username' => 'required|min:4|max:45|',
             'password' => 'required'
             ]);
+
         if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
             return view('bienvenido');
         }
+
         return view('ingresar');
     }
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nombre' => 'max:45|nullable',
-            'apellido' => 'max:45|nullable',
-            'username' => 'required|min:4|max:45|unique:users',
-            'email' => 'required|email|max:80|unique:users',
-            'password' => 'required',
-            'avatar' => 'nullable'
-            ]);
-
-        $info = $request->all();
-        $info['password'] = password_hash($info['password'], PASSWORD_BCRYPT);
-
-        if(!isset($info['avatar'])){
-            $info['avatar'] = null;
+        if(Auth::check()){
+            return redirect('/');
+        } else{
+            
+            $this->validate($request, [
+                'nombre' => 'max:45|nullable',
+                'apellido' => 'max:45|nullable',
+                'username' => 'required|min:4|max:45|unique:users',
+                'email' => 'required|email|max:80|unique:users',
+                'password' => 'required',
+                'avatar' => 'nullable'
+                ]);
+    
+            $info = $request->all();
+            $info['password'] = password_hash($info['password'], PASSWORD_BCRYPT);
+    
+            if(!isset($info['avatar'])){
+                $info['avatar'] = null;
+            }
+    
+            $usuario = User::create([
+                'first_name' => $info['nombre'],
+                'last_name' => $info['apellido'],
+                'email' => $info['email'],
+                'password' => $info['password'],
+                'avatar' => $info['avatar'],
+                'username' => $info['username']]
+            );
+    
+            Auth::login($usuario);
+    
+            return view('paginaPrincipal');
         }
 
-        $usuario = User::create([
-            'first_name' => $info['nombre'],
-            'last_name' => $info['apellido'],
-            'email' => $info['email'],
-            'password' => $info['password'],
-            'avatar' => $info['avatar'],
-            'username' => $info['username']]);
-
-        return view('registro');
+        
     }
 
     /**
