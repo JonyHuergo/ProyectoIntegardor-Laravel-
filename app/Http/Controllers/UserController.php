@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Image;
 
 class UserController extends Controller
 { 
@@ -68,6 +69,11 @@ class UserController extends Controller
     
             if(!isset($info['avatar'])){
                 $info['avatar'] = "AvatarPlaceholder.png";
+            } else{
+                $avatar = $info["avatar"];
+                $filename = $info['username']."-".time().$avatar->getClientOriginalExtension();
+                Image::make($avatar)->resize(200, 200)->save(public_path("/imagenes/avatars/".$filename));
+                $info["avatar"] = $filename;    
             }
     
             $usuario = User::create([
@@ -81,7 +87,7 @@ class UserController extends Controller
     
             Auth::login($usuario);
     
-            return view('paginaPrincipal');
+            return redirect('/');
         }
 
         
