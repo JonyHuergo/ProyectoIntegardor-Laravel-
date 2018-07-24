@@ -8,20 +8,25 @@
 <div id="banner">
       <br>
       <div class="area">
-      <div><h4>Filtros</h4>
-        <form>
+      <div>
+        <h4>Filtros</h4>
+
+        <form method="GET">
           <label for="name">Buscar por nombre</label>
           <input type="text" id="name" name="sport">
+
           <label for="hourly_price">Precio</label>
           <input type="number" id="sport" name="sport">
+
           <label for="sport">Deporte</label>
           <select id="sport" name="sport">
             <option value="Futbol">Futbol</option>
             <option value="Tenis">Tenis</option>
             <option value="Hockey">Hockey</option>
           </select>
+
           <input type="submit">
-        </form>
+        </form>      
       </div>
         <h1 class="text-center">Canchas</h1>
 
