@@ -71,7 +71,7 @@ class UserController extends Controller
                 $info['avatar'] = "AvatarPlaceholder.png";
             } else{
                 $avatar = $info["avatar"];
-                $filename = $info['username']."-".time().$avatar->getClientOriginalExtension();
+                $filename = $info['username']."-".time().".".$avatar->getClientOriginalExtension();
                 Image::make($avatar)->resize(200, 200)->save(public_path("/imagenes/avatars/".$filename));
                 $info["avatar"] = $filename;    
             }
