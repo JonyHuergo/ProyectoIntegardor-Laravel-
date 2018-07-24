@@ -23,12 +23,14 @@
       </div>
   </div>
   @else
+  @php ($avatar = Auth::user()->avatar)
   <div class="card text-center col-md-5 offset-md-3 user-card">
     <div class="card-header">
       {{Auth::user()->username}}
     </div>
     <div class="card-group">
       <div class="card">
+      <a href="{{url('perfil')}}">Perfil</a>
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
@@ -39,7 +41,7 @@
         </form>
       </div>
       <div class="card">
-        <img src="imagenes/avatars/{{Auth::user()->avatar}}">
+        <img src="{{ URL::asset('imagenes/avatars/'.$avatar) }}">
       </div>
     </div>
     
