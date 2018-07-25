@@ -56,7 +56,9 @@
             </a>
             @endforeach
         @endif
+        @if(Auth::check()&&Auth::user()->username === "JonaxXD")
         <a href="registrarCancha"><button class="boton">Registrar Cancha</button></a>
+        @endif
         {{ $canchas->links() }}
 
     </div>

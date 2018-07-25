@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Field;
+use Auth;
 
 
 class FieldController extends Controller
@@ -78,7 +79,7 @@ class FieldController extends Controller
 
         $info = $request->all();
 
-        $usuario = Field::create([
+        $cancha = Field::create([
             'name' => $info['name'],
             'address' => $info['address'],
             'sport' => $info['sport'],
@@ -103,7 +104,12 @@ class FieldController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+            $cancha = Field::find($id);
+            return view('editarCancha', ['cancha' => $cancha]);
+        } else{
+            return redirect()->action('FieldController@index');
+        }
     }
 
     /**
@@ -115,7 +121,22 @@ class FieldController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'max:80|required',
+            'address' => 'max:100|required',
+            'sport' => 'required|max:15',
+            'hourly_price' => 'required|numeric'
+            ]);
+
+        $cancha = Field::find($id);
+
+        $cancha->name = $request["name"];
+        $cancha->address = $request["address"];
+        $cancha->sport = $request["sport"];
+        $cancha->hourly_price = $request["hourly_price"];
+        $cancha->save();
+
+        return redirect()->action('FieldController@index');
     }
 
     /**
@@ -126,6 +147,12 @@ class FieldController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+            Field::destroy($id);
+            return redirect()->action('FieldController@index');
+        } else{
+            return redirect()->action('FieldController@index');
+        }
+        
     }
 }

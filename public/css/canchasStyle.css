@@ -63,6 +63,10 @@
     margin: 30px 10%;
     padding: 50px;
   }
+
+  #admin-buttons{
+    margin: 5px;
+  }
   
   @media (max-width: 768px){
   

@@ -2,7 +2,7 @@
 <meta charset="utf-8">
       <title>@yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="imagenes/logo_chico.png" />
+      <link rel="shortcut icon" href="{{ URL::asset('imagenes/logo_chico.png') }}" />
 
       <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
