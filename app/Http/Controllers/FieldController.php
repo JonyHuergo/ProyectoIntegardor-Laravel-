@@ -9,10 +9,57 @@ use App\Field;
 class FieldController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+
+        if(isset($request["name"])&&!empty($request["name"])){
+            $canchas = Field::where('name', '=', $request["name"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+        }
+
+        /*if(isset($request["sport"])&&$request["sport"] != "Todos"){
+
+            if((isset($request["minimo"])&&is_int($request["minimo"]))||(isset($request["maximo"])&&is_int($request["maximo"]))){
+
+                if(is_int($request["minimo"])&&!is_int($request["maximo"])){
+                    $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '>=', $request["minimo"])->paginate(10);
+                    return view('canchas', ['canchas' => $canchas]);
+                }
+                if(!is_int($request["minimo"])&&is_int($request["maximo"])){
+                    $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                    return view('canchas', ['canchas' => $canchas]);
+                }
+
+                $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '>=', $request["minimo"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+
+            }
+
+            $canchas = Field::where('sport', 'LIKE', $request["sport"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+        }*/
+
+        /*if((isset($request["minimo"])&&!empty($request["minimo"]))||(isset($request["maximo"])&&!empty($request["maximo"]))){
+
+            if(is_int($request["minimo"])&&!is_int($request["maximo"])){
+                $canchas = Field::where('hourly_price', '>=', $request["minimo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+            }
+            if(!is_int($request["minimo"])&&is_int($request["maximo"])){
+                $canchas = Field::where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+            }
+
+            $canchas = Field::where('hourly_price', '>=', $request["minimo"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+
+        }*/
+
         $canchas = Field::paginate(10);
         return view('canchas', ['canchas' => $canchas]);
+
+
+        
     }
 
     public function create()
