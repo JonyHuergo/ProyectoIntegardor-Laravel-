@@ -17,7 +17,7 @@ main {
   width: 240px;
   margin-top: 40px;
 }
-
+/*
 nav{
   background-color: #e8e8e8;
   margin-top: 30px;
@@ -52,7 +52,7 @@ nav .menu li a:hover{
   background: #6c4799;
   color: white;
 }
-
+*/
 section{
   width: 100%;
   height: 100%;
@@ -147,7 +147,7 @@ section{
   .container{
     padding: 0;
   }
-
+/*
   nav .menu{
       float:none;
       width: 100%;
@@ -160,7 +160,7 @@ section{
       width: 25%;
       height: auto;
   }
-
+*/
   .cuerpo{
     width: 90%;
     margin: 0 5%;
@@ -195,7 +195,7 @@ section{
     display: block;
     margin: 0 auto;
   }
-
+/*
   .sticky-top{
     position: static;
   }
@@ -212,7 +212,7 @@ section{
   nav ul li:first-child{
     border-top: 5px solid #6c4799;
   }
-
+*/
   .cuerpo{
     width: 96%;
     margin: 0 2%;
