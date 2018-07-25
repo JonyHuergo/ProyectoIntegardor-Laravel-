@@ -16,7 +16,7 @@ body {
   width: 240px;
   margin-top: 40px;
 }
-
+/*
 nav{
   background-color: #e8e8e8;
   margin-top: 30px;
@@ -51,7 +51,7 @@ nav .menu li a:hover{
   background: #6c4799;
   color: white;
 }
-
+*/
 main{
   background-image: url(../imagenes/fondo.png);
   padding: 100px 0;

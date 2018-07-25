@@ -62,14 +62,14 @@ body {
     width: 240px;
     margin-top: 40px;
   }
-  
+  /*
   nav{
     background-color: #e8e8e8;
     margin-top: 30px;
     width: 100%;
     display: block;
     height: 56px;
-    overflow:hidden;
+    
   }
   
   nav .menu{
@@ -97,6 +97,68 @@ body {
     background: #6c4799;
     color: white;
   }
+*/
+/* NEW STYLE NAV */
+.navbar{
+  padding: 0 1rem;
+  background-color: #e8e8e8;
+  font-family: 'ABeeZee', sans-serif;
+}
+.navbar li a:hover{
+  background: #6c4799;
+  color: white !important;
+}
+
+.navbar li.active a{
+  background: #4b9c35;
+  color:white !important;
+}
+#navbarToggled{
+  height: inherit;
+}
+#navbarToggled *{
+  height: inherit;
+}
+
+.nav-link{
+  padding: 1rem !important;
+  color: black !important;
+}
+.navbar-toggler{
+  margin: 1rem;
+}
+
+.dropdown-toggle{
+  display:block;
+  color: black;
+  padding: 0.55rem;
+}
+.dropdown-toggle:hover{
+text-decoration:none;
+}
+.navbar-login
+{
+  width: 305px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.user-img{
+  margin: 0 5px;
+}
+@media (min-width: 768px){
+  .navbar-login{
+      margin:auto;
+  }
+}
+
+/* END NEW STYLE */
 
   .footer-general {
     background-color:black;
