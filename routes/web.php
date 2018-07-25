@@ -19,8 +19,6 @@ Route::get('canchas/{id}', 'FieldController@show');
 Route::get('registrarCancha', 'FieldController@create');
 Route::post('registrarCancha', 'FieldController@store');
 
-Route::get('cantUsuarios', 'AjaxController@getCantUsuarios');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
