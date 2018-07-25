@@ -18,7 +18,31 @@
       </footer>
     </body>
 
-    <p class="text-center">¡Ya somos {{DB::table('users')->count()}} usuarios!</p>
+    <p class="text-center">¡Ya somos <span id="cant-usuarios">{{DB::table('users')->count()}}</span> usuarios!</p>
+    <script>
+      setInterval(function()
+      { 
+
+        var xmlhttp = new XMLHttpRequest();
+         xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById('cant-usuarios').innerHTML = xmlhttp.responseText;
+        }
+        };
+        xmlhttp.open("GET", "{{url('cantUsuarios')}}", true);
+        xmlhttp.send();
+
+        /*$.ajax({
+        'type': "GET",
+        'url': "{{url('cantUsuarios')}}",
+        'success': function (data) {
+            document.getElementById('cant-usuarios').innerHTML = data;
+          }
+        });*/
+        
+      }, 30000);
+      
+    </script>
 
     {{-- Agrego scripts de bootstrap para el slider --}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
