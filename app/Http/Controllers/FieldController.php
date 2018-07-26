@@ -106,7 +106,7 @@ class FieldController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+        if(Auth::check() && Auth::user()->is_admin == true ){
             $cancha = Field::find($id);
             return view('editarCancha', ['cancha' => $cancha]);
         } else{
@@ -149,7 +149,7 @@ class FieldController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+        if(Auth::check() && Auth::user()->is_admin == true ){
             Field::destroy($id);
             return redirect()->action('FieldController@index');
         } else{

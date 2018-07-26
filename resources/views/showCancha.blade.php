@@ -7,7 +7,7 @@
 @section('content')        
     <div id="banner">
         <div class="area">
-        @if(Auth::check()&&Auth::user()->username === "JonaxXD")
+        @if(Auth::check()&&Auth::user()->is_admin == true)
         <a href="borrarCancha/{{$cancha->id}}"><button class="btn btn-danger pull-right" id="admin-buttons">Borrar</button></a><a href="editarCancha/{{$cancha->id}}"><button class="btn btn-primary pull-right" id="admin-buttons">Editar</button></a>
         @endif
         <br>
