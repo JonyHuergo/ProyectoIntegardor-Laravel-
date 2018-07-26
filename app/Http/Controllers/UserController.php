@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Field;
 use Auth;
 use Image;
 use JsValidator;
@@ -20,6 +21,12 @@ class UserController extends Controller
     public function index()
     {
         //
+        if(isset($request["first_name"])&&!empty($request["first_name"])){
+            $usuarios = Field::where('first_name', '=', $request["first_name"])->paginate(10);
+            return view('usuarios', ['usuarios' => $usuarios]);
+            $usuarios = Field::paginate(10);
+            return view('usuarios', ['usuarios' => $usuarios]);
+        }
     }
 
     public function create()
@@ -121,6 +128,8 @@ class UserController extends Controller
         //
         $usuario = Field::find($id);
         return view('editarUsuario', ['usuario' => $usuario]);
+
+
 
     }
 

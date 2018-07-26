@@ -14,10 +14,8 @@ Route::get('ingresar', 'UserController@login');
 Route::post('ingresar', 'UserController@validateUser');
 Route::get('perfil', 'UserController@perfil');
 
-Route::get('usuarios', 'UserController@index');
-Route::get('usuarios/{id}', 'UserController@show');
-Route::get('usuarios/editarUsuario/{id}', 'UserController@edit');
-Route::post('usuarios/editarUsuario/{id}', 'UserController@update');
+Route::get('editarUsuario/{id}', 'UserController@edit');
+Route::post('editarUsuario/{id}', 'UserController@update');
 
 Route::get('canchas', 'FieldController@index');
 Route::get('canchas/{id}', 'FieldController@show');
