@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Field;
-<<<<<<< HEAD
 use JsValidator;
 use App\Http\Requests\CanchasRegisterRequest;
-=======
 use Auth;
->>>>>>> 4e2715a2b229fc1cdd82686a3c26523b54739e8b
 
 
 class FieldController extends Controller
