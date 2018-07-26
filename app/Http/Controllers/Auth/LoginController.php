@@ -73,7 +73,7 @@ class LoginController extends Controller
         $request->session()->put('login_error', trans('auth.failed'));
         throw ValidationException::withMessages(
             [
-                'error' => [trans('auth.failed')],
+                'error' => 'Email o contraseña incorrectos',
             ]
         );
     }
