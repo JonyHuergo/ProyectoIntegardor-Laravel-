@@ -14,27 +14,7 @@
       <form action="canchas" method="GET">
           <label for="name">Buscar por nombre</label>
           <input type="text" id="name" name="name">
-
-          <h4>Filtros</h4>
-
-
-          <label for="sport">Deporte</label>
-          <select id="sport" name="sport">
-            <option value="Todos">Todos</option>
-            <option value="Futbol">Futbol</option>
-            <option value="Tenis">Tenis</option>
-            <option value="Hockey">Hockey</option>
-          </select>
-
-          <br>
-
-          <label>Precio</label>
-          <br>
-          <label for="minimo">Minimo:</label>
-          <input type="number" name="minimo" min="0" step="10">
-          <label for="maximo">Máximo:</label>
-          <input type="number" name="maximo" min="0" step="10">
-
+          
           <input type="submit" value="Buscar">
         </form>
       </div>

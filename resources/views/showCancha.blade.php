@@ -17,7 +17,9 @@
         <h3>Direccion: {{$cancha->address}}</h3>
         <h3>Precio: ${{$cancha->hourly_price}}</h3>
         {{--Aqui deberian ir las imagenes de ser implementadas--}}
-        <a href="#"><button class="btn btn-success">Reservar</button></a>
+        @if(Auth::check())
+        <a href="reservar/{{$cancha->id}}"><button class="btn btn-success">Reservar</button></a>
+        @endif
         @endif
         </div>
     </div>

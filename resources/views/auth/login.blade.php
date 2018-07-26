@@ -59,7 +59,7 @@
             <input class="boton" type="submit" value="Ingresar">   
             
         </form>
-        <a href="{{ route('password.request') }}">{{ __('Olvidé mi contraseña') }}</a>
+        {{--<a href="{{ route('password.request') }}">{{ __('Olvidé mi contraseña') }}</a>--}}
     </div>
 </section>
                 

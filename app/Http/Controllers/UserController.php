@@ -8,6 +8,7 @@ use Auth;
 use Image;
 use JsValidator;
 use App\Http\Requests\RegisterRequest;
+use App\Reservation;
 
 class UserController extends Controller
 { 
@@ -146,7 +147,9 @@ class UserController extends Controller
         if(!Auth::check()){
             return redirect('/');
         } else{
-            return view('perfil', ['usuario'=>Auth::user()]);
+            $usuario=Auth::user();
+            $reservas = Reservation::where('user_id', '=', $usuario->id)->get();
+            return view('perfil', compact('usuario','reservas'));
         }
     }
 }

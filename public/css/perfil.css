@@ -13,3 +13,21 @@ main #banner{
     border-radius: 5px;
     padding: 5px;
 }
+
+.reserva{
+    margin-top: 10px;
+    border-width: 0.5px;
+    border-color: black;
+  }
+
+  @media (max-width: 768px){
+      .col-4 img{
+          max-width: 100%;
+          display:block;
+      }
+
+      .nombre{
+        max-width: 100%;
+        display:block;
+      }
+  }
