@@ -3,7 +3,8 @@
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/registroStyle.css') }}">
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @endsection
 @section('content')
 <div class="banner">
@@ -32,7 +33,7 @@ color: #dc3545; width:100%">
             <label class="control-label" for="apellido">Apellido</label>
             <br/>
             <input type="text" class="form-control" id="apellido" name="apellido" value="<?= isset($_POST['apellido']) ? $_POST['apellido'] : ""; ?>" placeholder="Ingrese Apellido">
-                      @if ($errors->has('apellido'))
+            @if ($errors->has('apellido'))
 
                     <span style="font-size: 80%;
 
