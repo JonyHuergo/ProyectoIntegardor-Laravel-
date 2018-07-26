@@ -3,12 +3,14 @@
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/ingresarStyle.css') }}">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @endsection
 @section('content')
 <section>
     <div class="text-center">
         <h1>Ingresa</h1>
-        <form class="row" method="POST" action="{{ route('login') }}">
+        <form class="row" method="POST" action="{{ route('login') }}" id="login">
 
             {{ csrf_field() }}
 
@@ -62,5 +64,5 @@
         {{--<a href="{{ route('password.request') }}">{{ __('Olvidé mi contraseña') }}</a>--}}
     </div>
 </section>
-                
+{!! JsValidator::formRequest('App\Http\Requests\UserRequest', '#login'); !!}
 @stop
