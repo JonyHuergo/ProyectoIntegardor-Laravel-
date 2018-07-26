@@ -146,15 +146,13 @@ class UserController extends Controller
         //
         $this->validate($request, [
             'first_name' => 'max:80|required',
-            'last_name' => 'max:100|required',
-            'email' => 'max:100|required'
+            'last_name' => 'max:100|required'
             ]);
 
         $usuario = Field::find($id);
 
         $usuario->first_name = $request["first_name"];
         $usuario->last_name = $request["last_name"];
-        $usuario->email = $request["email"];
         $usuario->save();
 
         return view('perfil', ['usuario'=>Auth::user()]);
