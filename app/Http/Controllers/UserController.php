@@ -8,7 +8,7 @@ use App\Field;
 use Auth;
 use Image;
 use JsValidator;
-use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UserRequest;
 use App\Reservation;
 
 class UserController extends Controller
@@ -59,7 +59,7 @@ class UserController extends Controller
         return view('ingresar');
     }
 
-    public function store(RegisterRequest $request)
+    public function store(UserRequest $request)
     {
         if(Auth::check()){
             return redirect('/');
@@ -70,7 +70,9 @@ class UserController extends Controller
                 'apellido' => 'max:45|nullable',
                 'username' => 'required|min:4|max:45|unique:users',
                 'email' => 'required|email|max:80|unique:users',
+                'cemail' => 'required|same:email',
                 'password' => 'required',
+                'cpassword' => 'required|same:password',
                 'avatar' => 'nullable'
                 ]);
 
