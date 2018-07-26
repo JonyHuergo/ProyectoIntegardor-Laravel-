@@ -25,6 +25,9 @@ Route::get('canchas/editarCancha/{id}', 'FieldController@edit');
 Route::post('canchas/editarCancha/{id}', 'FieldController@update');
 Route::get('canchas/borrarCancha/{id}', 'FieldController@destroy');
 
+Route::get('canchas/reservar/{id}', 'ReservationController@create');
+Route::post('canchas/reservar/{id}', 'ReservationController@store');
+
 Route::get('cantUsuarios', 'AjaxController@getCantUsuarios');
 
 Auth::routes();

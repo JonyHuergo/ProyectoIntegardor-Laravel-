@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reservation;
 use Illuminate\Http\Request;
+use Auth;
 
 class ReservationController extends Controller
 {
@@ -22,9 +23,13 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        if(!Auth::check()){
+            return redirect('/');
+        } else{
+        return view('reservar');
+        }
     }
 
     /**
@@ -33,9 +38,26 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+
+        $customMessage = [
+            'required' => 'La fecha y hora deben ser introducidas.'
+        ];
+
+        $this->validate($request, [
+            'date' => 'required',
+        ],$customMessage);
+
+        $reserva = Reservation::create([
+            'user_id' => Auth::user()->id,
+            'field_id' => $id,
+            'date' => $request['date']
+            ]);
+
+        $usuario=Auth::user();
+        $reservas = Reservation::where('user_id', '=', $usuario->id)->get();
+        return view('perfil', compact('usuario','reservas'));
     }
 
     /**
