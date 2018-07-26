@@ -69,8 +69,8 @@
             <img class="card-img-top" src="{{ URL::asset('imagenes/hockey.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Hockey</b></h5>
-              <br>
               <p class="card-text">Hockey sobre sobre cesped, hockey sobre patines y hockey sala, todo en nuestra pagina. ¿Que esperas?, reserva tu cancha ya!</p>
+              <br>
               <div class="card-footer">
                   <a href="#" class="btn">Ver canchas</a>
               </div>
@@ -80,8 +80,8 @@
             <img class="card-img-top" src="{{ URL::asset('imagenes/futbol.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Fútbol</b></h5>
-              <br>
               <p class="card-text">El deporte rey tambien esta presente en Canchas Ya<sup>™</sup>. Fútbol 5, fútbol 8, fútbol 11, sobre pasto, cesped sintetico, cemento, todo esta acá. Reserva ya! </p>
+              <br>
               <div class="card-footer">
                   <a href="#" class="btn">Ver canchas</a>
               </div>

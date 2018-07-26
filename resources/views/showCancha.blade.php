@@ -17,7 +17,7 @@
         <h3>Direccion: {{$cancha->address}}</h3>
         <h3>Precio: ${{$cancha->hourly_price}}</h3>
         {{--Aqui deberian ir las imagenes de ser implementadas--}}
-        <a href="#"><button>Reservar</button></a>
+        <a href="#"><button class="btn btn-success">Reservar</button></a>
         @endif
         </div>
     </div>
