@@ -31,7 +31,7 @@
 
                   @if ($errors->has('identity'))
 
-                    <span class="is-invalid">
+                    <span class="help-block">
                         <strong>{{ $errors->first('identity') }}</strong>
                     </span>
 
@@ -45,7 +45,7 @@
 
                   @if ($errors->has('password'))
 
-                    <span class="is-invalid">
+                    <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
                     </span>
 
