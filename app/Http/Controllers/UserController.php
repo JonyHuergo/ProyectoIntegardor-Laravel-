@@ -10,8 +10,8 @@ use JsValidator;
 use App\Http\Requests\RegisterRequest;
 
 class UserController extends Controller
-{ 
-    
+{
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +29,7 @@ class UserController extends Controller
         } else{
             return view('registro');
         }
-        
+
     }
 
     public function login()
@@ -56,7 +56,7 @@ class UserController extends Controller
         if(Auth::check()){
             return redirect('/');
         } else{
-            
+
             $this->validate($request, [
                 'nombre' => 'max:45|nullable',
                 'apellido' => 'max:45|nullable',
@@ -65,19 +65,19 @@ class UserController extends Controller
                 'password' => 'required',
                 'avatar' => 'nullable'
                 ]);
-    
+
             $info = $request->all();
             $info['password'] = password_hash($info['password'], PASSWORD_BCRYPT);
-    
+
             if(!isset($info['avatar'])){
                 $info['avatar'] = "AvatarPlaceholder.png";
             } else{
                 $avatar = $info["avatar"];
                 $filename = $info['username']."-".time().".".$avatar->getClientOriginalExtension();
                 Image::make($avatar)->resize(200, 200)->save(public_path("/imagenes/avatars/".$filename));
-                $info["avatar"] = $filename;    
+                $info["avatar"] = $filename;
             }
-    
+
             $usuario = User::create([
                 'first_name' => $info['nombre'],
                 'last_name' => $info['apellido'],
@@ -86,14 +86,14 @@ class UserController extends Controller
                 'avatar' => $info['avatar'],
                 'username' => $info['username']]
             );
-    
+
             Auth::login($usuario);
-    
+
             return redirect('/');
         }
-        
 
-        
+
+
     }
 
     /**
@@ -105,6 +105,9 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $usuario = Field::find($id);
+        return view('perfil', ['usuario' => $usuario]);
+
     }
 
     /**
@@ -116,6 +119,9 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $usuario = Field::find($id);
+        return view('editarUsuario', ['usuario' => $usuario]);
+
     }
 
     /**
@@ -128,6 +134,20 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'first_name' => 'max:80|required',
+            'last_name' => 'max:100|required',
+            'email' => 'max:100|required'
+            ]);
+
+        $usuario = Field::find($id);
+
+        $usuario->first_name = $request["first_name"];
+        $usuario->last_name = $request["last_name"];
+        $usuario->email = $request["email"];
+        $usuario->save();
+
+        return view('perfil', ['usuario'=>Auth::user()]);
     }
 
     /**

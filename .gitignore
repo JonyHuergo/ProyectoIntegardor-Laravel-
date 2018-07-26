@@ -13,3 +13,4 @@ yarn-error.log
 *.env
 error_log
 access_log
+/public/imagenes/avatars/*
