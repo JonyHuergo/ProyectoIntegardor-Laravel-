@@ -6,5 +6,5 @@
 @endsection
 @section('content')
 <h1>Bienvenido</h1>
-<span><h3>¡Gracias por haberte logueado <?='Usuario'/*$_SESSION["usuario"]*/?>!</h3></span>
+<span><h3>¡Gracias por haberte logueado {{Auth::user()->username}}!</h3></span>
 @endsection
