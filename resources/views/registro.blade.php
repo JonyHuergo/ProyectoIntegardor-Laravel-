@@ -73,7 +73,7 @@
         </form>
       </div>
     </div>
-{!! JsValidator::formRequest('App\Http\Requests\UserRequest', '#registr'); !!}
+{!! JsValidator::formRequest('App\Http\Requests\RegisterRequest', '#registr'); !!}
 @endsection
 
 

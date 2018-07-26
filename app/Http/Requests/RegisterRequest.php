@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class RegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,8 +31,7 @@ class UserRequest extends FormRequest
             'cemail' => 'required|same:email',
             'password' => 'required',
             'cpassword' => 'required|same:password',
-            'avatar' => 'nullable',
-            'identity' => 'required'
+            'avatar' => 'nullable'
         ];
     }
     public function messages()
@@ -52,8 +51,7 @@ class UserRequest extends FormRequest
         'cemail.same' => 'Los emails no coinciden',
         'password.required' => 'Ingresa una contraseña',
         'cpassword.required' =>'Repite tu contraseña',
-        'cpassword.same' => 'Las contraseñas no coinciden',
-        'identity.required' => 'Ingresa tu email o usuario'
+        'cpassword.same' => 'Las contraseñas no coinciden'
     ];
 
 
