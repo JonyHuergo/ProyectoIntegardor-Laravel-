@@ -4,17 +4,68 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Field;
+<<<<<<< HEAD
 use JsValidator;
 use App\Http\Requests\CanchasRegisterRequest;
+=======
+use Auth;
+>>>>>>> 4e2715a2b229fc1cdd82686a3c26523b54739e8b
 
 
 class FieldController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+
+        if(isset($request["name"])&&!empty($request["name"])){
+            $canchas = Field::where('name', '=', $request["name"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+        }
+
+        /*if(isset($request["sport"])&&$request["sport"] != "Todos"){
+
+            if((isset($request["minimo"])&&is_int($request["minimo"]))||(isset($request["maximo"])&&is_int($request["maximo"]))){
+
+                if(is_int($request["minimo"])&&!is_int($request["maximo"])){
+                    $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '>=', $request["minimo"])->paginate(10);
+                    return view('canchas', ['canchas' => $canchas]);
+                }
+                if(!is_int($request["minimo"])&&is_int($request["maximo"])){
+                    $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                    return view('canchas', ['canchas' => $canchas]);
+                }
+
+                $canchas = Field::where('sport', '=', $request["sport"])->where('hourly_price', '>=', $request["minimo"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+
+            }
+
+            $canchas = Field::where('sport', 'LIKE', $request["sport"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+        }*/
+
+        /*if((isset($request["minimo"])&&!empty($request["minimo"]))||(isset($request["maximo"])&&!empty($request["maximo"]))){
+
+            if(is_int($request["minimo"])&&!is_int($request["maximo"])){
+                $canchas = Field::where('hourly_price', '>=', $request["minimo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+            }
+            if(!is_int($request["minimo"])&&is_int($request["maximo"])){
+                $canchas = Field::where('hourly_price', '<=', $request["maximo"])->paginate(10);
+                return view('canchas', ['canchas' => $canchas]);
+            }
+
+            $canchas = Field::where('hourly_price', '>=', $request["minimo"])->where('hourly_price', '<=', $request["maximo"])->paginate(10);
+            return view('canchas', ['canchas' => $canchas]);
+
+        }*/
+
         $canchas = Field::paginate(10);
         return view('canchas', ['canchas' => $canchas]);
+
+
+        
     }
 
     public function create()
@@ -33,7 +84,7 @@ class FieldController extends Controller
 
         $info = $request->all();
 
-        $usuario = Field::create([
+        $cancha = Field::create([
             'name' => $info['name'],
             'address' => $info['address'],
             'sport' => $info['sport'],
@@ -58,7 +109,12 @@ class FieldController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+            $cancha = Field::find($id);
+            return view('editarCancha', ['cancha' => $cancha]);
+        } else{
+            return redirect()->action('FieldController@index');
+        }
     }
 
     /**
@@ -70,7 +126,22 @@ class FieldController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'max:80|required',
+            'address' => 'max:100|required',
+            'sport' => 'required|max:15',
+            'hourly_price' => 'required|numeric'
+            ]);
+
+        $cancha = Field::find($id);
+
+        $cancha->name = $request["name"];
+        $cancha->address = $request["address"];
+        $cancha->sport = $request["sport"];
+        $cancha->hourly_price = $request["hourly_price"];
+        $cancha->save();
+
+        return redirect()->action('FieldController@index');
     }
 
     /**
@@ -81,6 +152,12 @@ class FieldController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::check() && Auth::user()->username === "JonaxXD" ){
+            Field::destroy($id);
+            return redirect()->action('FieldController@index');
+        } else{
+            return redirect()->action('FieldController@index');
+        }
+        
     }
 }

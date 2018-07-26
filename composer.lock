@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "c228491d599e51f5156cbc73cd7da8eb",
+=======
+    "content-hash": "fd5880d2e1128c3cbd13bc043535ea80",
+>>>>>>> 4e2715a2b229fc1cdd82686a3c26523b54739e8b
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1100,6 +1104,7 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "proengsoft/laravel-jsvalidation",
@@ -1174,6 +1179,8 @@
                 "validator"
             ],
             "time": "2018-07-19T13:02:08+00:00"
+=======
+>>>>>>> 4e2715a2b229fc1cdd82686a3c26523b54739e8b
         },
         {
             "name": "psr/container",

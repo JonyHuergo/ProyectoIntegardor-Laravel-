@@ -217,4 +217,6 @@ return [
 
     ],
 
+    'faker_locale' => 'es_AR',
+
 ];

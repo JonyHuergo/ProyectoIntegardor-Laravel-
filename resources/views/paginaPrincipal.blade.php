@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<section>
+
   <div id="slider-home" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
     <li data-target="#slider-home" data-slide-to="0" class="active"></li>
@@ -61,7 +61,7 @@
     </a>
 
   </div><!-- slider-home-->
-</section>
+
 
       <div class="container">
         <div class="tipos-de-canchas">
