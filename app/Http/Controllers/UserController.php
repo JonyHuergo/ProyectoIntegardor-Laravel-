@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Image;
+use JsValidator;
+use App\Http\Requests\RegisterRequest;
 
 class UserController extends Controller
 { 
@@ -49,7 +51,7 @@ class UserController extends Controller
         return view('ingresar');
     }
 
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
         if(Auth::check()){
             return redirect('/');
@@ -89,6 +91,7 @@ class UserController extends Controller
     
             return redirect('/');
         }
+        
 
         
     }

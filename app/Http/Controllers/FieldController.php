@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Field;
+use JsValidator;
+use App\Http\Requests\CanchasRegisterRequest;
 
 
 class FieldController extends Controller
@@ -20,7 +22,7 @@ class FieldController extends Controller
         return view('registrarCancha');
     }
 
-    public function store(Request $request)
+    public function store(CanchasRegisterRequest $request)
     {
         $this->validate($request, [
             'name' => 'max:80|required',

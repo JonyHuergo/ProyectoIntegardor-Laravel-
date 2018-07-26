@@ -26,15 +26,8 @@ body {
     height: 100%;
   }
 
-  #registro{
-    background-color: #4b9c35;
-    color:white;
-    width: 75%;
-    margin: 0 auto;
-  }
-
-  #registro:hover{
-    background-color: #6c4799;
+  .valid{
+    border-color:#28a745;
   }
 
   #ingreso{
@@ -135,6 +128,10 @@ body {
 }
 .dropdown-toggle:hover{
 text-decoration:none;
+}
+.dropdown-menu.show{
+  display: grid;
+  float: inherit;
 }
 .navbar-login
 {

@@ -3,25 +3,15 @@
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/registroStyle.css') }}">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @endsection
 @section('content')
 <div class="banner">
       <br>
 
       <div class="area">
-
-          @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-          @endif
-      
-
-        <form role="form" action="registrarCancha" method="post" enctype="multipart/form-data">
+        <form role="form" action="registrarCancha" id="registrar" method="post" enctype="multipart/form-data">
           <div>
             <label for="name">Nombre</label>
             <br/>
@@ -58,7 +48,6 @@
           <input class="boton pull-right" type="submit" name="botonSubmit" value="Registrar"/>
         </form>
       </div>
-
-
     </div>
+    {!! JsValidator::formRequest('App\Http\Requests\CanchasRegisterRequest', '#registrar'); !!}
 @endsection
