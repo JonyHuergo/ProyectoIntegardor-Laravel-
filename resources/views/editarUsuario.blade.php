@@ -25,14 +25,14 @@
           <div>
             <label for="name">Nombre</label>
             <br/>
-            <input type="text" class="form-control" id="nombre" name="nombre" value="<?= isset($_POST['nombre']) ? $_POST['nombre'] : $usuario->nombre; ?>" placeholder="Ingrese el nombre del usuario">
+            <input type="text" class="form-control" id="first_name" name="first_name" value="<?= isset($_POST['first_name']) ? $_POST['first_name'] : $usuario->first_name; ?>" placeholder="Ingrese el nombre del usuario">
             <br/>
           </div>
 
           <div>
             <label for="address">Apellido</label>
             <br/>
-            <input type="text" class="form-control" id="apellido" name="apellido" value="<?= isset($_POST['apellido']) ? $_POST['apellido'] : $usuario->apellido; ?>" placeholder="Ingrese el apellido">
+            <input type="text" class="form-control" id="last_name" name="last_name" value="<?= isset($_POST['last_name']) ? $_POST['last_name'] : $usuario->last_name; ?>" placeholder="Ingrese el apellido">
             <br/>
           </div>
 
@@ -44,7 +44,7 @@
           </div>
           {{ csrf_field() }}
 
-          <input class="boton pull-right" type="submit" name="botonSubmit" value="Registrar"/>
+          <input class="boton pull-right" type="submit" name="botonSubmit" value="Guardar"/>
         </form>
       </div>
 
