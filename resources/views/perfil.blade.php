@@ -10,21 +10,17 @@
         <div class="col-4"><img src="{{ URL::asset('imagenes/avatars/'.$usuario->avatar) }}"></div>
         <span class="col-4 text-center nombre"><h1>{{$usuario->username}}</h1></span>
     </section>
-<<<<<<< HEAD
     @if(isset($usuario))
     <h1 class="text-center">{{$usuario->username}}</h1>
     <h1 class="text-center">{{$usuario->first_name}} {{$usuario->last_name}}</h1>
     <h1 class="text-center">{{$usuario->email}}</h1>
-    <a href="editarUsuario/{{$usuario->id}}"><button class="btn btn-primary" id="admin-buttons">Editar</button></a>
+    <a href="editarUsuario/{{$usuario->id}}"><button class="btn btn-primary" id="admin-buttons">Editar Perfil</button></a>
 
 
     @endif
-</div>
-@endsection
-=======
     <section class="user-data">
         <h3 class="text-center">Reservas</h3>
-        @foreach ($reservas as $reserva)  
+        @foreach ($reservas as $reserva)
         @php
             $cancha_id = $reserva->field_id;
             $cancha = App\Field::find($cancha_id);
@@ -33,6 +29,5 @@
         <br>
         @endforeach
     </section>
-</div> 
+</div>
 @endsection
->>>>>>> b17e11ad0c9a5ed66901fc4f85bb2e8ed7f2f195
