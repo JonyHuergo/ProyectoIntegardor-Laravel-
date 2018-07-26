@@ -69,24 +69,32 @@
             <img class="card-img-top" src="{{ URL::asset('imagenes/hockey.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Hockey</b></h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-              <a href="#" class="btn">Ver canchas</a>
+              <br>
+              <p class="card-text">Hockey sobre sobre cesped, hockey sobre patines y hockey sala, todo en nuestra pagina. ¿Que esperas?, reserva tu cancha ya!</p>
+              <div class="card-footer">
+                  <a href="#" class="btn">Ver canchas</a>
+              </div>
             </div>
           </div>
           <div class="card categorias">
             <img class="card-img-top" src="{{ URL::asset('imagenes/futbol.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Fútbol</b></h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-              <a href="#" class="btn">Ver canchas</a>
+              <br>
+              <p class="card-text">El deporte rey tambien esta presente en Canchas Ya<sup>™</sup>. Fútbol 5, fútbol 8, fútbol 11, sobre pasto, cesped sintetico, cemento, todo esta acá. Reserva ya! </p>
+              <div class="card-footer">
+                  <a href="#" class="btn">Ver canchas</a>
+              </div>
             </div>
           </div>
           <div class="card categorias">
             <img class="card-img-top" src="{{ URL::asset('imagenes/tenis.jpg') }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><b>Canchas de Tenis</b></h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-              <a href="#" class="btn">Ver canchas</a>
+              <p class="card-text">El gran Guillermo Vilas una vez dijo "el pasto es para las vacas" y en Canchas Ya<sup>™</sup> le hicimos caso, asi que en nuestro sitio podras encontrar mucho polvo de ladrillo y cemento, pero nada de pasto</p>
+              <div class="card-footer">
+                  <a href="#" class="btn">Ver canchas</a>
+              </div>
             </div>
           </div>
         </div>
